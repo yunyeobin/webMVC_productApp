@@ -26,6 +26,17 @@
             justify-content: center;
             align-items: center;
         }
+        .updatebutton{
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #form2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
@@ -51,17 +62,17 @@
         <input type="text" name="stock" value="${dto.stock}">
     </div>
 
-    <div>
+    <div class="updatebutton">
         <button type="submit">수정</button>
     </div>
+</form>
+
+</div>
 <form id="form2" action="/product/remove" method="post">
     <input type="hidden" name="pno" value="${dto.pno}" readonly> <%--타입을 hidden을 이용하면 보이지 않는다.--%>
     <div>
         <button type="submit">제거</button>
     </div>
 </form>
-</form>
-
-</div>
 </body>
 </html>
