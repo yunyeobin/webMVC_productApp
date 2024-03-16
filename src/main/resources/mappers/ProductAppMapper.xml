@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssg.productapp.mapper.ProductAppMapper">
+
+<!--    상품을 추가하는 쿼리문-->
+    <insert id="insert">
+        insert into tbl_product(pname, price, stock) values (#{pname}, #{price}, #{stock})
+    </insert>
+
+<!--    전체 상품 목록을 불러오는 쿼리문-->
+    <select id="selectAll" resultType="com.ssg.productapp.domain.ProductAppVO">
+        select * from tbl_product order by pno desc;
+    </select>
+
+<!--    pno에 해당하는 하나의 상품을 선택하는 쿼리문-->
+    <select id="selectOne" resultType="com.ssg.productapp.domain.ProductAppVO">
+        select * from tbl_product where pno = #{pno};
+    </select>
+
+<!--    pno에 해당하는 하나의 상품을 제거하는 쿼리문-->
+    <delete id="delete">
+        delete from tbl_product where pno = #{pno}
+    </delete>
+
+<!--    pno에 해당하는 하나의 상품을 수정하는 쿼리문-->
+    <update id="update">
+        update tbl_product set pname = #{pname}, price = #{price}, stock = #{stock} where pno = #{pno}
+    </update>
+
+</mapper>
