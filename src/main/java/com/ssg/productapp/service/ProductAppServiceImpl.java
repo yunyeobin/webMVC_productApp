@@ -30,8 +30,8 @@ public class ProductAppServiceImpl implements ProductAppService {
     public List<ProductAppDTO> productList() {
         List<ProductAppVO> voList = productAppMapper.selectAll();
         List<ProductAppDTO> dtoList = voList.stream()
-                .map(vo -> modelMapper.map(vo, ProductAppDTO.class))
-                .sorted(Comparator.comparing(ProductAppDTO::getPno))//내림차순정렬
+                .map(vo -> modelMapper.map(vo, ProductAppDTO.class))//오타수정
+                .sorted(Comparator.comparing(ProductAppDTO::getPno))//내림차순정렬가능케 수정
                 .collect(Collectors.toList());
         return dtoList;
     }
