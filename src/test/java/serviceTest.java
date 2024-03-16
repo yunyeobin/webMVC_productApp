@@ -22,7 +22,8 @@ public class serviceTest {
 
     @Test
     public void testList(){
-        List<ProductAppDTO> list = productAppService.productList();
+        String searchKeyword = null;
+        List<ProductAppDTO> list = productAppService.productList(searchKeyword);
         for (ProductAppDTO productAppDTO : list){
             System.out.println(productAppDTO.getPname());
             System.out.println(productAppDTO.getPno());
@@ -33,7 +34,8 @@ public class serviceTest {
 
     @Test
     public void testMapperList(){
-        List<ProductAppVO> list = productAppMapper.selectAll();
+        String searchKeyword = null;
+        List<ProductAppVO> list = productAppMapper.selectAll(searchKeyword);
         for(ProductAppVO productAppVO : list){
             System.out.println(productAppVO.getPname());
             System.out.println(productAppVO.getPno());

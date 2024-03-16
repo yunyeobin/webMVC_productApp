@@ -1,5 +1,6 @@
 package com.ssg.productapp.controller;
 
+import com.ssg.productapp.domain.ProductAppVO;
 import com.ssg.productapp.dto.ProductAppDTO;
 import com.ssg.productapp.service.ProductAppService;
 import lombok.RequiredArgsConstructor;
@@ -9,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -20,11 +22,12 @@ public class ProductAppController {
     private final ProductAppService productAppService;
 
     @RequestMapping("/list")
-    public void list(Model model) {
+    public String list(@RequestParam(value = "searchKeyword", required = false, defaultValue = "") String searchKeyword, Model model) {
         log.info("product list doing...");
-        List<ProductAppDTO> dtoList = productAppService.productList();
+        List<ProductAppDTO> dtoList = productAppService.productList(searchKeyword);
         model.addAttribute("dtoList", dtoList);
         //addAttribute메소드가 파라미터를 "dtoList"라는 이름으로 view로 같이 보내줌
+        return "/product/list";
     }
 
     @GetMapping({"/read", "/modify"})

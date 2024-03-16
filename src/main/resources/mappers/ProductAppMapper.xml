@@ -11,7 +11,13 @@
 
 <!--    전체 상품 목록을 불러오는 쿼리문-->
     <select id="selectAll" resultType="com.ssg.productapp.domain.ProductAppVO">
-        select * from tbl_product order by pno desc;
+        select * from tbl_product
+        <where>
+            <if test="searchKeyword != null and searchKeyword != ''">
+                pname like concat('%', #{searchKeyword}, '%')
+            </if>
+        </where>
+        order by pno;
     </select>
 
 <!--    pno에 해당하는 하나의 상품을 선택하는 쿼리문-->

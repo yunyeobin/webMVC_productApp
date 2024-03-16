@@ -38,6 +38,11 @@
             align-items: center;
             margin-top: 50px;
         }
+        .searchbar{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
@@ -45,6 +50,12 @@
 <h1>상품 관리 메인</h1>
 </div>
 <div class="table_div">
+    <div class="searchbar">
+        <form action="/product/list" method="get">
+            <input type="text" name="searchKeyword" placeholder="검색어 입력">
+            <input type="submit" value="검색">
+        </form>
+    </div>
 <table class="prod_tbl">
     <thead>
     <tr>

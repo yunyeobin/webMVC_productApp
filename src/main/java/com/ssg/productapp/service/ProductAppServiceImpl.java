@@ -27,8 +27,8 @@ public class ProductAppServiceImpl implements ProductAppService {
     }
 
     @Override
-    public List<ProductAppDTO> productList() {
-        List<ProductAppVO> voList = productAppMapper.selectAll();
+    public List<ProductAppDTO> productList(String searchKeyword) {
+        List<ProductAppVO> voList = productAppMapper.selectAll(searchKeyword);
         List<ProductAppDTO> dtoList = voList.stream()
                 .map(vo -> modelMapper.map(vo, ProductAppDTO.class))//오타수정
                 .sorted(Comparator.comparing(ProductAppDTO::getPno))//내림차순정렬가능케 수정
