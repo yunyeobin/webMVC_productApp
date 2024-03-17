@@ -32,12 +32,27 @@
         }
 
         .button_div {
-            margin-top: 50px;
+            margin-top: 20px;
             margin-outside: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: large;
+        }
+        .button_div a{
+            background-color: darkslategray;
+            padding-top: 10px;
+            color: white;
+            width: 200px;
+            height: 40px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .prod_div input{
+            width: 500px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
     </style>
 </head>

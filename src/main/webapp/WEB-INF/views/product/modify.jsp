@@ -37,6 +37,21 @@
             justify-content: center;
             align-items: center;
         }
+        .form_div input{
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button{
+            background-color: darkslategray;
+            color: white;
+            height: 30px;
+            border-radius: 10px;
+            font-size: 15px;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
     </style>
 </head>
 <body>

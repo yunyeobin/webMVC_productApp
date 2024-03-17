@@ -27,8 +27,26 @@
             align-items: center;
             margin-top: 40px;
         }
+        .form_div input{
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
         .button_div{
-            margin-top: 50px;
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .button_div button{
+            background-color: darkslategray;
+            color: white;
+            height: 30px;
+            border-radius: 10px;
+            font-size: 15px;
+            margin-right: 10px;
+            margin-left: 10px;
         }
     </style>
 </head>
@@ -37,7 +55,7 @@
 <h1>상품 등록 하기</h1>
 </div>
 <div class="form_div">
-<form action="/product/register" method="post">
+<form class="inputbox" action="/product/register" method="post">
     <div>
         <label>상품이름</label>
         <input type="text" name="pname" placeholder="상품 이름">

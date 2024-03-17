@@ -38,11 +38,21 @@
             align-items: center;
             margin-top: 50px;
         }
-        .searchbar{
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .searchbar input{
+
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
+        .button_div button{
+            background-color: darkslategray;
+            color: white;
+            height: 60px;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+
     </style>
 </head>
 <body>
@@ -50,8 +60,8 @@
 <h1>상품 관리 메인</h1>
 </div>
 <div class="table_div">
-    <div class="searchbar">
-        <form action="/product/list" method="get">
+    <div class="searchbar_div">
+        <form class="searchbar" action="/product/list" method="get">
             <input type="text" name="searchKeyword" placeholder="검색어 입력">
             <input type="submit" value="검색">
         </form>
