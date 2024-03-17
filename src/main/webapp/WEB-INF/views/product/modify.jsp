@@ -63,6 +63,7 @@
     <div>
         <label>상품번호</label>
         <input type="text" name="pno" value="${dto.pno}" readonly>
+<%--        번호에 a태그 삭제--%>
     </div>
     <div>
         <label>상품이름</label>
