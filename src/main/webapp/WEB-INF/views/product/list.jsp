@@ -31,6 +31,11 @@
         .prod_tbl{
             width: 800px;
             text-align: center;
+            
+        }
+        .prod_tbl thead th{
+            background-color: darkslategray;
+            color: white;
         }
         .button_div{
             display: flex;
