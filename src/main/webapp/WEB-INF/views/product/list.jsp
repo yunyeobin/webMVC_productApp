@@ -79,7 +79,7 @@
     <tbody>
     <c:forEach items="${dtoList}" var="dto">
         <tr>
-            <td><a href="/product/read?pno=${dto.pno}">${dto.pno}</a></td> <%--pno에 해당하는 read컨트롤러 호출--%>
+            <td><c:out value="${dto.pno}"/></td> <%--pno에 해당하는 read컨트롤러 호출--%>
             <td><c:out value="${dto.pname}"/></td>
             <td><c:out value="${dto.price}"/></td>
             <td><c:out value="${dto.stock}"/></td>
